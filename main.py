@@ -43,11 +43,11 @@ async def main():
     if current_plugstate==desired_plugstate: 
         print(f"doing nothing. plugstate was {current_plugstate} desired plugstate was {desired_plugstate}")
     elif desired_plugstate == PlugState.ON:
-        result = await plug.turn_on()
-        print(f"result: {result}")
+        print(f" turning on ...") 
+        await plug.turn_on()
     elif desired_plugstate == PlugState.OFF:
-        result = await plug.turn_off()
-        print(f"result: {result}")
+        print(f" turning off ...")
+        await plug.turn_off()
 
 if __name__ == '__main__':
     sys.exit(asyncio.run(main()))

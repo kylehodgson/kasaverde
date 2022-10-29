@@ -2,5 +2,6 @@
 cd ~/projects/kasaverde
 . venv/bin/activate
 . ./.env
-python main.py
+date >> /var/log/verde.log
+python main.py >> /var/log/verde.log
 
