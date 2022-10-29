@@ -1,4 +1,4 @@
 wheel
 requests
-kasa
+python-kasa
 simplemoer
