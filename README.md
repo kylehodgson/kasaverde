@@ -12,7 +12,7 @@ You probably shouldn't use `kasaverde` for your tea kettle, coffee maker, or toa
 
 # How does it know when the power is green?
 
-`kasaverde` queries the very excellent [WattTime](https://www.watttime.org) API. You can read more about their methods [here](https://www.watttime.org/marginal-emissions-methodology/). 
+`kasaverde` queries the very excellent [WattTime](https://www.watttime.org) API. You can read more about their methods [here](https://www.watttime.org/marginal-emissions-methodology/).
 
 # Does it work anywhere in the world?
 
@@ -21,4 +21,16 @@ Today, WattTime covers most of the USA, most of Canada, lots of Europe and Austr
 # How do I start?
 
 Well, you need a small computer to run it on right now. It's working well on raspberry pi devices, but could work on any Linux machine, a mac, or windows machine even, that is on the same IP network with the device you want to manage, for instance over your home wifi. From there, you need to register a username with WattTime's API, get your lattitude and longitude, and configure the app.
+
+## Installation
+
+1. clone the repo
+1. set environment values for WATTTIMEUSERNAME, WATTTIMEPASSWORD, PLUGHOST, MAXMOER, LATTITUDE and LONGITUDE. An example.env file is provided.
+1. set up a crontab to run the app every five minutes. 
+
+## Configuration
+
+ - WATTTIMEUSERNAME and WATTTIMEPASSWORD are, perhaps unsurprisingly, for the API username and password you will generate for yourself. - PLUGHOST is the IP address of the Kasa smartplug you'd like to control
+ - MAXMOER tells `kasaverde` at what point you'd like to turn devices on. The default value of `"50"` will be treated like a percentage. When WattTime tells `kasaverde` that power in your area is cleaner than it is 50% of the time, then `kasaverde` will turn on your smartplug.
+ - LATTITUDE and LONGITUDE are for your current lattitude and longitude. `kasaverde` will provide these to WattTime so that we are getting the emissions data for your area.
 
