@@ -30,7 +30,8 @@ Well, you need a small computer to run it on right now. It's working well on ras
 
 ## Configuration
 
- - WATTTIMEUSERNAME and WATTTIMEPASSWORD are, perhaps unsurprisingly, for the API username and password you will generate for yourself. - PLUGHOST is the IP address of the Kasa smartplug you'd like to control
+ - WATTTIMEUSERNAME and WATTTIMEPASSWORD are, perhaps unsurprisingly, for the API username and password you will generate for yourself. 
+ - PLUGHOST is the IP address of the Kasa smartplug you'd like to control
  - MAXMOER tells `kasaverde` at what point you'd like to turn devices on. The default value of `"50"` will be treated like a percentage. When WattTime tells `kasaverde` that power in your area is cleaner than it is 50% of the time, then `kasaverde` will turn on your smartplug.
  - LATTITUDE and LONGITUDE are for your current lattitude and longitude. `kasaverde` will provide these to WattTime so that we are getting the emissions data for your area.
 
