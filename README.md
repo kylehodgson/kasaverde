@@ -24,9 +24,9 @@ Well, you need a small computer to run it on right now. It's working well on ras
 
 ## Installation
 
-1. clone the repo
-1. set environment values for WATTTIMEUSERNAME, WATTTIMEPASSWORD, PLUGHOST, MAXMOER, LATTITUDE and LONGITUDE. An example.env file is provided.
-1. set up a crontab to run the app every five minutes. 
+1. clone this repo.
+1. set environment values. An `example.env` file is provided.
+1. set up a crontab to run the app every five minutes. See the included `check.sh` script as an example that's callable from `cron`.
 
 ## Configuration
 
