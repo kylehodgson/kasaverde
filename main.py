@@ -24,13 +24,13 @@ async def main():
     if PLUGHOSTS:
         for host in PLUGHOSTS.split(','):
             print(f"[{log_time()}] processing host {host} in list {PLUGHOSTS}...")
-            await check_plug(current_moer, host)
+            await manage_plug(current_moer, host)
     if PLUGHOST:
         print(f"[{log_time()}] processing host {PLUGHOST} from env...")
-        await check_plug(current_moer, PLUGHOST)
+        await manage_plug(current_moer, PLUGHOST)
 
 
-async def check_plug(current_moer, host):
+async def manage_plug(current_moer, host):
     plugManager = PlugManager(host)
     current_plugstate = await plugManager.get_state()
     desired_plugstate = (

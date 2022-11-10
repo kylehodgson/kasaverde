@@ -4,11 +4,11 @@ It makes your house greener! It does this by turning [TP-Link kasa](https://www.
 
 # What can I use it for?
 
-`kasaverde` is very good for things that are always on, but don't need to be - so, a cordless toothbrush charger, a cordless beard trimmer charger, phone charger, lawn mower battery charger. Things that need to run a few hours, but you don't care if they run now or later.  `kasaverde` also works well for appliances like dehumidifiers.
+`kasaverde` is very good for things that are always on, but don't need to be - so, a cordless toothbrush charger, a cordless beard trimmer charger, phone charger, lawn mower battery charger. Things that need to run a few hours, but you don't care if they run now or later.  `kasaverde` also works well for appliances like dehumidifiers, particularly ones that start dehumidifying as soon as power is provided.
 
 If a thing in your home uses electricity, is compatible with a TP-Link Kasa smart plug, and will start doing what it does once the power comes back on, `kasaverde` can help. 
 
-You probably shouldn't use `kasaverde` for your tea kettle, coffee maker, or toaster though, as those aren't really using power unless you want toast, coffee or tea. So, if you turn it on to use it, and it turns off when you're done, it's not a great fit.
+You probably shouldn't use `kasaverde` for your tea kettle, coffee maker, or toaster though, as those aren't really using power unless you want toast, coffee or tea. Plus, it would make you wait until the power was green again before you had your coffee, which seems like a non-starter to me. So, if you turn it on to use it, and it turns off when you're done, it's not a great fit.
 
 # How does it know when the power is green?
 
@@ -35,3 +35,6 @@ Well, you need a small computer to run it on right now. It's working well on ras
  - MAXMOER tells `kasaverde` at what point you'd like to turn devices on. The default value of `"50"` will be treated like a percentage. When WattTime tells `kasaverde` that power in your area is cleaner than it is 50% of the time, then `kasaverde` will turn on your smartplug.
  - LATTITUDE and LONGITUDE are for your current lattitude and longitude. `kasaverde` will provide these to WattTime so that we are getting the emissions data for your area.
 
+## How do I get my lattitude and longitude?
+
+Try going to Google Maps (from your computer), and finding your address. If you right click, a menu should pop up, and the first item in that menu will be your lattitude and longitude pair. If you click it, it will copy to your clipboard. `kasaverde` expects the first number presented to be set in your `LATT` environment variable, and the second number in  `LONG`.
