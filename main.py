@@ -20,6 +20,7 @@ def log_time() -> str:
 async def main():
     wt = WattTime()
     current_moer = wt.get_index()['percent']
+    print(f"[{log_time()}] current moer: {current_moer}")
     if PLUGHOSTS:
         for host in PLUGHOSTS.split(','):
             print(f"[{log_time()}] processing host {host} in list {PLUGHOSTS}...")
@@ -71,7 +72,7 @@ class PlugManager:
     async def set_state(self, current_plugstate, desired_plugstate):
         if current_plugstate == desired_plugstate:
             print(f"doing nothing. plugstate was {current_plugstate}"
-                  " desired plugstate was {desired_plugstate}")
+                  f" desired plugstate was {desired_plugstate}")
         elif desired_plugstate == PlugState.ON:
             print(f" turning on ...")
             await self.plug.turn_on()
